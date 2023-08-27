@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Registrati</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="css/index.css">
+<body>
+
+<div class="container">
+<h1>Effettua la registrazione compilando il form sottostante</h1>
+<form class="row g-3" action = "./jsp/register.jsp" method="post">
+  <div class="col-md-6">
+    <label for="inputNome4" class="form-label">Nome</label>
+    <input type="text" class="form-control" name="nome">
+  </div>
+  <div class="col-md-6">
+    <label for="inputCognome4" class="form-label">Cognome</label>
+    <input type="text" class="form-control" name = "cognome">
+  </div>
+  <div class="col-md-6">
+    <label for="inputEmail" class="form-label">E-mail</label>
+    <input type="email" class="form-control" name = "email">
+  </div>
+  <div class="col-md-6">
+    <label for="inputphone2" class="form-label">Cellulare</label>
+    <input type="number" class="form-control" name = "cellulare">
+  </div>
+  <div class="col-md-6">
+    <label for="inputpassword" class="form-label">Password</label>
+    <input type="password" class="form-control" name = "password">
+  </div>
+  <div class="col-md-6">
+    <label for="inputState" class="form-label">Data di nascita</label>
+    <input type="date" class="form-control" name = "data_di_nascita">
+  </div>
+  <div class="col-12">
+  </div>
+  <div class="col-md-6">
+    <button type="submit" class="btn btn-dark">Sign in</button>
+  </div>
+  <div class="col-md-6">
+    Sei gia registrato?   <a class="btn btn-dark" href="login.html">Login</a>
+</div>
+</form>
+
+	<div class = "mt-4">
+    	Sei un cliente? registrati o logga qui  <a class="btn btn-dark" href="customerRegister.html">Registrati qui</a>
+  	</div>
+</div>
+</body>
+</html>

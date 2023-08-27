@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin-top: 20px;
+}
+
+.card {
+  margin: 20px;
+  padding: 20px;
+}
+
+.login__field {
+  margin-bottom: 20px;
+}
+
+.login__submit {
+  margin-top: 20px;
+}

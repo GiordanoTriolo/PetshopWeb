@@ -1,0 +1,48 @@
+body {
+      background-color: orange; /* Sfondo arancione */
+      color: black; /* Testo nero */
+    }
+    .card {
+      background-color: #333;
+      color: #fff;
+      border: none;
+    }
+    
+    
+    .card-title {
+      font-weight: bold;
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+    .btn-link {
+      color: #fff;
+      background-color: #007bff;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      text-decoration: none;
+      display: inline-block;
+      margin-right: 10px;
+    }
+    .btn-link:hover {
+      background-color: #0056b3;
+    }
+    /* Stile per centrare la card e il bottone "Conferma" */
+    .container {
+    width: 120%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .card-form {
+      max-width: 600px;
+      width: 100%;
+    }
+    .card-form .table {
+      width: 100%;
+    }
+    .card-form .btn-primary {
+      margin-top: 10px;
+      width: 100%;
+    }
