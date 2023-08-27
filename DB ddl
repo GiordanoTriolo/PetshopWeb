@@ -1,0 +1,126 @@
+-- MySQL dump 10.13  Distrib 8.0.32, for Win64 (x86_64)
+--
+-- Host: localhost    Database: webpetshop
+-- ------------------------------------------------------
+-- Server version	8.0.32
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `animale`
+--
+
+DROP TABLE IF EXISTS `animale`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `animale` (
+  `matricola` int NOT NULL AUTO_INCREMENT,
+  `nome_animale` varchar(50) DEFAULT NULL,
+  `data_di_acquisto` varchar(50) DEFAULT NULL,
+  `tipo_animale` varchar(50) DEFAULT NULL,
+  `prezzo` int NOT NULL,
+  `id_cliente` int DEFAULT NULL,
+  PRIMARY KEY (`matricola`),
+  KEY `id_cliente` (`id_cliente`),
+  CONSTRAINT `animale_ibfk_1` FOREIGN KEY (`id_cliente`) REFERENCES `customers` (`id_customer`)
+) ENGINE=InnoDB AUTO_INCREMENT=24235 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `animale`
+--
+
+LOCK TABLES `animale` WRITE;
+/*!40000 ALTER TABLE `animale` DISABLE KEYS */;
+INSERT INTO `animale` VALUES (1234,'Charlie','24-07-2023','canarino',20,1),(3232,'Fido','23-09-2019','cane',50,2),(24234,'fufis',NULL,'cane',80,NULL);
+/*!40000 ALTER TABLE `animale` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `cliente`
+--
+
+DROP TABLE IF EXISTS `cliente`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `cliente` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nome` varchar(50) DEFAULT NULL,
+  `cognome` varchar(50) DEFAULT NULL,
+  `username` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `cellulare` varchar(10) DEFAULT NULL,
+  `data_di_nascita` varchar(255) DEFAULT NULL,
+  `passwd` varchar(255) DEFAULT NULL,
+  `ruolo` varchar(1) DEFAULT NULL,
+  `status` varchar(1) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `cliente`
+--
+
+LOCK TABLES `cliente` WRITE;
+/*!40000 ALTER TABLE `cliente` DISABLE KEYS */;
+INSERT INTO `cliente` VALUES (1,'Giordano','Triolo','GITR2023','giordanotriolo99@gmail.com','3485730066','2023-07-20','admin','M','A'),(2,'mo','we','MOWE2022','mfa@gmail.com','1234567890','2022-06-07','keke','G','A'),(3,'gi','tr','ARMA2023','giordanotriolo99@gmail.com','1234567890','2023-07-21','asdf','G','A');
+/*!40000 ALTER TABLE `cliente` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `customers`
+--
+
+DROP TABLE IF EXISTS `customers`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `customers` (
+  `id_customer` int NOT NULL AUTO_INCREMENT,
+  `nome` varchar(50) DEFAULT NULL,
+  `cognome` varchar(50) DEFAULT NULL,
+  `username` varchar(50) DEFAULT NULL,
+  `passwd` varchar(50) DEFAULT NULL,
+  `data_di_nascita` varchar(50) DEFAULT NULL,
+  `indirizzo` varchar(100) DEFAULT NULL,
+  `citta` varchar(50) DEFAULT NULL,
+  `cellulare` varchar(10) DEFAULT NULL,
+  `ruolo` varchar(1) DEFAULT 'C',
+  `status` varchar(1) DEFAULT 'A',
+  PRIMARY KEY (`id_customer`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `customers`
+--
+
+LOCK TABLES `customers` WRITE;
+/*!40000 ALTER TABLE `customers` DISABLE KEYS */;
+INSERT INTO `customers` VALUES (1,'Giordano','Triolo','GITR2023','asdf','2023-08-09','Via Gaetano Donizetti','castellarano','3485730065','C','A'),(2,'Arnaldo','Triolo','ARTR2023','ert','2023-08-22','Via Gaetano Donizetti','castellarano','1234567890','C','A'),(5,'marco','francia','MAFR2023','zxc','2023-08-02','Via Gaetano Donizetti','castellarano','1111111111','C','A'),(6,'Giordano','Triolo','GITR2023_1','fff','2023-08-24','Via Gaetano Donizetti','castellarano','1234567890','C','A');
+/*!40000 ALTER TABLE `customers` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping routines for database 'webpetshop'
+--
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2023-08-28  1:42:52
